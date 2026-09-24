@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>DilCraft Network</title>
 
 <style>
@@ -14,9 +13,7 @@
     font-family:Arial,Tahoma,sans-serif;
 }
 
-html{
-    scroll-behavior:smooth;
-}
+html{scroll-behavior:smooth}
 
 body{
     background:#050509;
@@ -51,9 +48,7 @@ nav a{
     font-weight:bold;
 }
 
-nav a:hover{
-    color:#b45cff;
-}
+nav a:hover{color:#b45cff}
 
 .hero{
     min-height:100vh;
@@ -63,7 +58,6 @@ nav a:hover{
     align-items:center;
     text-align:center;
     padding:30px;
-
     background:
     radial-gradient(circle at 50% 30%,#6719a5 0%,#180625 35%,#050509 75%);
 }
@@ -93,18 +87,14 @@ nav a:hover{
     background:#0009;
 }
 
-section{
-    padding:90px 7%;
-}
+section{padding:90px 7%}
 
 .title{
     text-align:center;
     margin-bottom:40px;
 }
 
-.title h2{
-    font-size:40px;
-}
+.title h2{font-size:40px}
 
 .title p{
     color:#aaa;
@@ -112,7 +102,7 @@ section{
 }
 
 
-/* STATUS */
+/* DASHBOARD */
 
 .status-container{
     max-width:850px;
@@ -130,9 +120,7 @@ section{
     border:1px solid #ffffff18;
 }
 
-.status-icon{
-    font-size:40px;
-}
+.status-icon{font-size:40px}
 
 .status-title{
     margin:12px 0;
@@ -144,13 +132,8 @@ section{
     font-weight:bold;
 }
 
-.online{
-    color:#22c55e;
-}
-
-.offline{
-    color:#ef4444;
-}
+.online{color:#22c55e}
+.offline{color:#ef4444}
 
 
 /* GAME MODES */
@@ -212,9 +195,7 @@ section{
 
 /* STORE */
 
-.store{
-    background:#08080d;
-}
+.store{background:#08080d}
 
 .store-modes{
     display:grid;
@@ -254,36 +235,7 @@ section{
 }
 
 
-/* SKYMINE SHOP */
-
-.shop-page{
-    display:none;
-    background:
-    radial-gradient(circle at 50% 20%,#183d70,#070912 60%);
-}
-
-.shop-page.active{
-    display:block;
-}
-
-.shop-header{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.shop-header h2{
-    font-size:45px;
-}
-
-.shop-header p{
-    color:#aaa;
-    margin-top:10px;
-}
-
-.shop-section-title{
-    font-size:30px;
-    margin:35px 0 20px;
-}
+/* PRODUCTS */
 
 .products{
     display:grid;
@@ -338,8 +290,34 @@ section{
     font-weight:bold;
 }
 
-.buy:hover{
-    background:#7c3aed;
+.buy:hover{background:#7c3aed}
+
+
+/* SKY MINE */
+
+.shop-page{
+    display:none;
+    background:
+    radial-gradient(circle at 50% 20%,#183d70,#070912 60%);
+}
+
+.shop-page.active{display:block}
+
+.shop-header{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.shop-header h2{font-size:45px}
+
+.shop-header p{
+    color:#aaa;
+    margin-top:10px;
+}
+
+.shop-section-title{
+    font-size:30px;
+    margin:35px 0 20px;
 }
 
 .back{
@@ -350,16 +328,13 @@ section{
     border-radius:10px;
     border:1px solid #ffffff25;
     color:white;
-    text-decoration:none;
     cursor:pointer;
 }
 
 
 /* SERVER */
 
-.server{
-    text-align:center;
-}
+.server{text-align:center}
 
 .server-box{
     max-width:600px;
@@ -387,9 +362,7 @@ footer{
     border-top:1px solid #ffffff15;
 }
 
-footer b{
-    color:#a855f7;
-}
+footer b{color:#a855f7}
 
 
 /* MOBILE */
@@ -405,9 +378,7 @@ footer b{
         margin-right:5px;
     }
 
-    .hero h1{
-        font-size:50px;
-    }
+    .hero h1{font-size:50px}
 
     .modes,
     .store-modes,
@@ -419,9 +390,7 @@ footer b{
         grid-template-columns:repeat(2,1fr);
     }
 
-    section{
-        padding:70px 5%;
-    }
+    section{padding:70px 5%}
 }
 </style>
 </head>
@@ -429,36 +398,25 @@ footer b{
 
 <body>
 
-
-<!-- NAVBAR -->
-
 <nav>
 
-<div class="logo">
-DILCRAFT
-</div>
+<div class="logo">DILCRAFT</div>
 
 <div>
-
 <a href="#home">خانه</a>
 <a href="#status">داشبورد</a>
 <a href="#modes">گیم مودها</a>
 <a href="#store">فروشگاه</a>
-
 </div>
 
 </nav>
 
 
-<!-- HOME -->
-
 <section class="hero" id="home">
 
 <h1>DILCRAFT</h1>
 
-<h2>
-شبکه دیل کرفت | DilCraft Network
-</h2>
+<h2>شبکه دیل کرفت | DilCraft Network</h2>
 
 <p>
 به دنیای دیل کرفت خوش آمدید!
@@ -478,24 +436,15 @@ DILCRAFT
 <section id="status">
 
 <div class="title">
-
-<h2>
-Dashboard | داشبورد
-</h2>
-
-<p>
-اطلاعات سرور
-</p>
-
+<h2>Dashboard | داشبورد</h2>
+<p>اطلاعات سرور</p>
 </div>
 
 <div class="status-container">
 
 <div class="status-box">
 
-<div class="status-icon">
-🟢
-</div>
+<div class="status-icon">🟢</div>
 
 <div class="status-title">
 Server Status | وضعیت سرور
@@ -510,9 +459,7 @@ Checking...
 
 <div class="status-box">
 
-<div class="status-icon">
-👥
-</div>
+<div class="status-icon">👥</div>
 
 <div class="status-title">
 Players Online | پلیرهای آنلاین
@@ -535,13 +482,9 @@ Players Online | پلیرهای آنلاین
 
 <div class="title">
 
-<h2>
-Game Modes | گیم مودها
-</h2>
+<h2>Game Modes | گیم مودها</h2>
 
-<p>
-گیم مودهای دیل کرفت
-</p>
+<p>گیم مودهای دیل کرفت</p>
 
 </div>
 
@@ -550,51 +493,39 @@ Game Modes | گیم مودها
 
 <div class="card sky">
 
-<div class="icon">
-☁️⛏️
-</div>
+<div class="icon">☁️⛏️</div>
 
 <h3>SkyMine</h3>
 
 <h4>اسکای ماین</h4>
 
-<p>
-جزیره خودت را بساز و منابع جمع کن.
-</p>
+<p>جزیره خودت را بساز و منابع جمع کن.</p>
 
 </div>
 
 
 <div class="card survival">
 
-<div class="icon">
-🌲🏠
-</div>
+<div class="icon">🌲🏠</div>
 
 <h3>Survival</h3>
 
 <h4>سروایول</h4>
 
-<p>
-در دنیای بقا ماجراجویی کن.
-</p>
+<p>در دنیای بقا ماجراجویی کن.</p>
 
 </div>
 
 
 <div class="card smp">
 
-<div class="icon">
-⚔️🔥
-</div>
+<div class="icon">⚔️🔥</div>
 
 <h3>SMP</h3>
 
 <h4>اس ام پی</h4>
 
-<p>
-با دوستانت بازی و ماجراجویی کن.
-</p>
+<p>با دوستانت بازی و ماجراجویی کن.</p>
 
 </div>
 
@@ -609,13 +540,9 @@ Game Modes | گیم مودها
 
 <div class="title">
 
-<h2>
-Store | فروشگاه
-</h2>
+<h2>Store | فروشگاه</h2>
 
-<p>
-گیم مود مورد نظر را انتخاب کنید
-</p>
+<p>گیم مود مورد نظر را انتخاب کنید</p>
 
 </div>
 
@@ -625,48 +552,131 @@ Store | فروشگاه
 
 <div class="store-mode" onclick="openSkyMine()">
 
-<div class="big-icon">
-☁️⛏️
-</div>
+<div class="big-icon">☁️⛏️</div>
 
 <h3>SkyMine</h3>
 
-<p>
-فروشگاه اسکای ماین
-</p>
+<p>فروشگاه اسکای ماین</p>
 
 </div>
 
 
 <div class="store-mode">
 
-<div class="big-icon">
-🌲🏠
-</div>
+<div class="big-icon">🌲🏠</div>
 
 <h3>Survival</h3>
 
-<p>
-به‌زودی
-</p>
+<p>به‌زودی</p>
 
 </div>
 
 
 <div class="store-mode">
 
-<div class="big-icon">
-⚔️🔥
-</div>
+<div class="big-icon">⚔️🔥</div>
 
 <h3>SMP</h3>
 
-<p>
-به‌زودی
-</p>
+<p>به‌زودی</p>
 
 </div>
 
+</div>
+
+
+<!-- DIL SHOP -->
+
+<div style="margin-top:80px;">
+
+<div class="title">
+
+<h2>🪙 Dil Shop | فروشگاه دیل</h2>
+
+<p>خرید Dil برای استفاده در فروشگاه گیم‌مودها</p>
+
+</div>
+
+
+<div class="products">
+
+
+<div class="product">
+
+<div class="product-icon">🪙</div>
+
+<h3>100 Dil</h3>
+
+<p>صد دیل</p>
+
+<div class="price">90,000 تومان</div>
+
+<button class="buy">خرید</button>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-icon">🪙</div>
+
+<h3>200 Dil</h3>
+
+<p>دویست دیل</p>
+
+<div class="price">180,000 تومان</div>
+
+<button class="buy">خرید</button>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-icon">🪙</div>
+
+<h3>300 Dil</h3>
+
+<p>سیصد دیل</p>
+
+<div class="price">280,000 تومان</div>
+
+<button class="buy">خرید</button>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-icon">🪙</div>
+
+<h3>500 Dil</h3>
+
+<p>پانصد دیل</p>
+
+<div class="price">470,000 تومان</div>
+
+<button class="buy">خرید</button>
+
+</div>
+
+
+<div class="product">
+
+<div class="product-icon">🪙</div>
+
+<h3>1000 Dil</h3>
+
+<p>هزار دیل</p>
+
+<div class="price">950,000 تومان</div>
+
+<button class="buy">خرید</button>
+
+</div>
+
+
+</div>
 
 </div>
 
@@ -679,18 +689,12 @@ Store | فروشگاه
 
 <div class="shop-header">
 
-<h2>
-SkyMine Store
-</h2>
+<h2>SkyMine Store</h2>
 
-<p>
-فروشگاه اختصاصی SkyMine
-</p>
+<p>فروشگاه اختصاصی SkyMine</p>
 
 </div>
 
-
-<!-- RANKS -->
 
 <h3 class="shop-section-title">
 👑 Ranks | رنک‌ها
@@ -701,104 +705,52 @@ SkyMine Store
 
 
 <div class="product">
-
 <div class="product-icon">⚡</div>
-
 <h3>Vortex</h3>
-
 <p>ورتکس</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">200 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">🌌</div>
-
 <h3>Astra</h3>
-
 <p>آسترا</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">400 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">🔥</div>
-
 <h3>Inferno</h3>
-
 <p>اینفرنو</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">600 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">👑</div>
-
 <h3>Eclipse</h3>
-
 <p>اکلیپس</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">800 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">💎</div>
-
 <h3>Sponsor</h3>
-
 <p>اسپانسر</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">1000 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 </div>
 
-
-<!-- CRATES -->
 
 <h3 class="shop-section-title">
 🎁 Crates | کریت‌ها
@@ -809,97 +761,47 @@ BUY | خرید
 
 
 <div class="product">
-
 <div class="product-icon">⚡</div>
-
 <h3>Tempest</h3>
-
 <p>تمپست</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">100 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">🌌</div>
-
 <h3>Starlight</h3>
-
 <p>استارلایت</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">200 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">🔥</div>
-
 <h3>Ember</h3>
-
 <p>امبر</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">400 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">🌙</div>
-
 <h3>Moonfall</h3>
-
 <p>مون‌فال</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">500 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
 <div class="product">
-
 <div class="product-icon">💎</div>
-
 <h3>Fortune</h3>
-
 <p>فورچون</p>
-
-<div class="price">
-Price TBA
-</div>
-
-<button class="buy">
-BUY | خرید
-</button>
-
+<div class="price">700 Dil</div>
+<button class="buy">خرید</button>
 </div>
 
 
@@ -907,7 +809,7 @@ BUY | خرید
 
 
 <div class="back" onclick="closeSkyMine()">
-← Back to Store | بازگشت به فروشگاه
+← بازگشت به فروشگاه
 </div>
 
 </section>
@@ -918,24 +820,16 @@ BUY | خرید
 <section class="server">
 
 <div class="title">
-
-<h2>
-Server Information | اطلاعات سرور
-</h2>
-
+<h2>Server Information | اطلاعات سرور</h2>
 </div>
 
 <div class="server-box">
 
-<h3>
-🎮 DilCraft Network
-</h3>
+<h3>🎮 DilCraft Network</h3>
 
 <br>
 
-<p>
-Server IP
-</p>
+<p>Server IP</p>
 
 <br>
 
@@ -961,17 +855,15 @@ dragon.9craft.ir:16575
 
 <script>
 
-/* STORE */
-
 function openSkyMine(){
 
     document.getElementById("store").style.display="none";
 
-    document.getElementById("skymineShop").classList.add("active");
+    document.getElementById("skymineShop")
+    .classList.add("active");
 
     document.getElementById("skymineShop")
     .scrollIntoView({behavior:"smooth"});
-
 }
 
 
@@ -980,11 +872,11 @@ function closeSkyMine(){
     document.getElementById("skymineShop")
     .classList.remove("active");
 
-    document.getElementById("store").style.display="block";
+    document.getElementById("store")
+    .style.display="block";
 
     document.getElementById("store")
     .scrollIntoView({behavior:"smooth"});
-
 }
 
 
@@ -1027,26 +919,22 @@ async function updateServer(){
             "status-value offline";
 
             players.textContent="0";
-
         }
 
     }catch(error){
 
-        status.textContent=
-        "Unknown | نامشخص";
+        status.textContent="Unknown | نامشخص";
 
         status.className=
         "status-value offline";
 
         players.textContent="--";
-
     }
-
 }
 
 updateServer();
 
-setInterval(updateServer,3000);
+setInterval(updateServer,300000);
 
 </script>
 
