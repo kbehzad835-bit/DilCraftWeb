@@ -1,0 +1,5 @@
+api-url: "https://linabase.com"
+api-key: "PUT_YOUR_ANON_KEY_HERE"
+table: "users"
+username-column: "username"
+balance-column: "dil"

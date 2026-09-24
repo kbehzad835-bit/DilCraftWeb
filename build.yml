@@ -1,0 +1,22 @@
+name: Build DilCraft
+
+on:
+  workflow_dispatch:
+  push:
+    branches: ["main"]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+      - uses: actions/setup-maven@v5
+      - run: mvn -B clean package
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DilCraft-1.0.0
+          path: target/DilCraft-1.0.0.jar
