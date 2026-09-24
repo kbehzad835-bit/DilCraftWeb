@@ -3,938 +3,549 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DilCraft Network</title>
+<title>DilCraft | سرور ماینکرفت</title>
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial,Tahoma,sans-serif;
-}
-
-html{scroll-behavior:smooth}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
-    background:#050509;
-    color:white;
+    font-family:Tahoma,Arial,sans-serif;
+    background:#080b12;
+    color:#fff;
+    min-height:100vh;
 }
 
-nav{
-    position:fixed;
-    top:0;
-    width:100%;
-    padding:18px 7%;
+header{
+    background:#101522;
+    border-bottom:1px solid #20283a;
+    padding:18px 6%;
     display:flex;
-    justify-content:space-between;
     align-items:center;
-    background:#050509ee;
-    backdrop-filter:blur(12px);
-    z-index:100;
-    border-bottom:1px solid #ffffff15;
+    justify-content:space-between;
+    position:sticky;
+    top:0;
+    z-index:10;
 }
 
 .logo{
-    font-size:26px;
+    font-size:25px;
     font-weight:bold;
-    color:#b45cff;
-    text-shadow:0 0 20px #8b2cff;
+    color:#7c5cff;
 }
 
-nav a{
+nav{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+nav button,.main-btn{
+    border:0;
+    padding:11px 17px;
+    border-radius:10px;
+    background:#171e2e;
     color:white;
-    text-decoration:none;
-    margin-right:18px;
-    font-weight:bold;
+    cursor:pointer;
+    transition:.2s;
 }
 
-nav a:hover{color:#b45cff}
+nav button:hover,.main-btn:hover{
+    background:#7c5cff;
+    transform:translateY(-2px);
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
 
 .hero{
-    min-height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
     text-align:center;
-    padding:30px;
-    background:
-    radial-gradient(circle at 50% 30%,#6719a5 0%,#180625 35%,#050509 75%);
+    padding:80px 15px 55px;
 }
 
 .hero h1{
-    font-size:70px;
-    direction:ltr;
-    text-shadow:0 0 35px #a855f7;
-}
-
-.hero h2{
-    margin-top:10px;
-    color:#d8b4fe;
-}
-
-.hero p{
-    margin:20px 0;
-    color:#ddd;
-    font-size:18px;
-}
-
-.ip{
-    direction:ltr;
-    padding:15px 25px;
-    border-radius:14px;
-    border:1px solid #a855f7;
-    background:#0009;
-}
-
-section{padding:90px 7%}
-
-.title{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.title h2{font-size:40px}
-
-.title p{
-    color:#aaa;
-    margin-top:10px;
-}
-
-
-/* DASHBOARD */
-
-.status-container{
-    max-width:850px;
-    margin:auto;
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:20px;
-}
-
-.status-box{
-    padding:30px;
-    text-align:center;
-    border-radius:22px;
-    background:#ffffff08;
-    border:1px solid #ffffff18;
-}
-
-.status-icon{font-size:40px}
-
-.status-title{
-    margin:12px 0;
-    color:#ddd;
-}
-
-.status-value{
-    font-size:30px;
-    font-weight:bold;
-}
-
-.online{color:#22c55e}
-.offline{color:#ef4444}
-
-
-/* GAME MODES */
-
-.modes{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.card{
-    min-height:300px;
-    padding:30px;
-    border-radius:25px;
-    display:flex;
-    flex-direction:column;
-    justify-content:flex-end;
-    border:1px solid #ffffff20;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 35px #8b2cff55;
-}
-
-.sky{
-    background:linear-gradient(145deg,#087da8,#09223f,#080b15);
-}
-
-.survival{
-    background:linear-gradient(145deg,#176b35,#10251b,#080b0a);
-}
-
-.smp{
-    background:linear-gradient(145deg,#8b2020,#321016,#080808);
-}
-
-.card .icon{
-    font-size:60px;
-    margin-bottom:auto;
-}
-
-.card h3{
-    font-size:30px;
-    direction:ltr;
-}
-
-.card h4{
-    color:#ddd;
-    margin:8px 0;
-}
-
-.card p{
-    color:#ccc;
-    line-height:1.7;
-}
-
-
-/* STORE */
-
-.store{background:#08080d}
-
-.store-modes{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:25px;
-}
-
-.store-mode{
-    padding:35px;
-    border-radius:25px;
-    text-align:center;
-    background:#ffffff08;
-    border:1px solid #ffffff18;
-    cursor:pointer;
-    transition:.3s;
-}
-
-.store-mode:hover{
-    transform:translateY(-8px);
-    border-color:#a855f7;
-    box-shadow:0 0 30px #8b2cff44;
-}
-
-.store-mode .big-icon{
-    font-size:60px;
+    font-size:52px;
     margin-bottom:15px;
 }
 
-.store-mode h3{
-    font-size:28px;
-    direction:ltr;
+.hero h1 span{
+    color:#7c5cff;
 }
 
-.store-mode p{
-    color:#aaa;
-    margin-top:8px;
+.hero p{
+    color:#aab3c5;
+    font-size:17px;
+    margin-bottom:25px;
 }
 
-
-/* PRODUCTS */
-
-.products{
-    display:grid;
-    grid-template-columns:repeat(5,1fr);
-    gap:15px;
+.section{
+    padding:35px 0;
 }
 
-.product{
-    padding:22px 15px;
-    border-radius:18px;
-    background:#ffffff0a;
-    border:1px solid #ffffff18;
+.section h2{
     text-align:center;
-    transition:.3s;
+    margin-bottom:25px;
+    font-size:30px;
 }
 
-.product:hover{
-    transform:translateY(-6px);
-    border-color:#a855f7;
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:18px;
 }
 
-.product-icon{
-    font-size:38px;
-    margin-bottom:12px;
+.card{
+    background:#111724;
+    border:1px solid #222b3d;
+    border-radius:18px;
+    padding:23px;
+    text-align:center;
+    transition:.2s;
 }
 
-.product h3{
-    direction:ltr;
-    font-size:21px;
+.card:hover{
+    transform:translateY(-5px);
+    border-color:#7c5cff;
 }
 
-.product p{
-    color:#aaa;
-    margin-top:6px;
-    font-size:14px;
+.card h3{
+    margin-bottom:10px;
+    font-size:22px;
+}
+
+.card p{
+    color:#aab3c5;
+    line-height:1.8;
+    margin-bottom:15px;
 }
 
 .price{
-    margin-top:15px;
-    color:#c084fc;
-    font-weight:bold;
-}
-
-.buy{
-    margin-top:15px;
-    padding:9px 16px;
-    border:0;
-    border-radius:9px;
-    background:#a855f7;
-    color:white;
-    cursor:pointer;
-    font-weight:bold;
-}
-
-.buy:hover{background:#7c3aed}
-
-
-/* SKY MINE */
-
-.shop-page{
-    display:none;
-    background:
-    radial-gradient(circle at 50% 20%,#183d70,#070912 60%);
-}
-
-.shop-page.active{display:block}
-
-.shop-header{
-    text-align:center;
-    margin-bottom:40px;
-}
-
-.shop-header h2{font-size:45px}
-
-.shop-header p{
-    color:#aaa;
-    margin-top:10px;
-}
-
-.shop-section-title{
-    font-size:30px;
-    margin:35px 0 20px;
-}
-
-.back{
-    display:block;
-    width:max-content;
-    margin:30px auto 0;
-    padding:12px 22px;
-    border-radius:10px;
-    border:1px solid #ffffff25;
-    color:white;
-    cursor:pointer;
-}
-
-
-/* SERVER */
-
-.server{text-align:center}
-
-.server-box{
-    max-width:600px;
-    margin:auto;
-    padding:35px;
-    border-radius:20px;
-    background:#ffffff08;
-    border:1px solid #ffffff15;
-}
-
-.server-ip{
-    direction:ltr;
-    color:#c084fc;
+    color:#ffd54a;
     font-weight:bold;
     font-size:20px;
+    margin:12px 0;
 }
 
+.status{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:9px 15px;
+    border-radius:20px;
+    background:#10251b;
+    color:#48e38a;
+    margin-bottom:15px;
+}
 
-/* FOOTER */
+.dot{
+    width:9px;
+    height:9px;
+    background:#48e38a;
+    border-radius:50%;
+}
+
+.shop{
+    display:none;
+}
+
+.shop.active{
+    display:block;
+}
+
+.mode{
+    cursor:pointer;
+}
+
+.mode-icon{
+    font-size:45px;
+    margin-bottom:12px;
+}
+
+.wallet{
+    background:linear-gradient(135deg,#17152d,#111724);
+    border:1px solid #34305d;
+}
+
+.dil{
+    color:#ffd54a;
+    font-size:30px;
+    font-weight:bold;
+}
 
 footer{
+    margin-top:50px;
+    padding:30px;
     text-align:center;
-    padding:35px;
-    color:#777;
-    border-top:1px solid #ffffff15;
+    color:#727b8e;
+    border-top:1px solid #20283a;
 }
 
-footer b{color:#a855f7}
+.hidden{
+    display:none;
+}
 
-
-/* MOBILE */
-
-@media(max-width:800px){
-
-    nav{
-        padding:15px 4%;
-    }
-
-    nav a{
-        font-size:11px;
-        margin-right:5px;
-    }
-
-    .hero h1{font-size:50px}
-
-    .modes,
-    .store-modes,
-    .status-container{
-        grid-template-columns:1fr;
-    }
-
-    .products{
-        grid-template-columns:repeat(2,1fr);
-    }
-
-    section{padding:70px 5%}
+@media(max-width:600px){
+    .hero h1{font-size:38px}
+    header{flex-direction:column;gap:15px}
 }
 </style>
 </head>
 
-
 <body>
 
-<nav>
+<header>
+    <div class="logo">⚡ DilCraft</div>
 
-<div class="logo">DILCRAFT</div>
-
-<div>
-<a href="#home">خانه</a>
-<a href="#status">داشبورد</a>
-<a href="#modes">گیم مودها</a>
-<a href="#store">فروشگاه</a>
-</div>
-
-</nav>
+    <nav>
+        <button onclick="showPage('home')">خانه</button>
+        <button onclick="showPage('dashboard')">داشبورد</button>
+        <button onclick="showPage('shop')">فروشگاه</button>
+    </nav>
+</header>
 
 
-<section class="hero" id="home">
+<!-- HOME -->
+<main id="home" class="container">
 
-<h1>DILCRAFT</h1>
+<section class="hero">
+    <h1>به <span>DilCraft</span> خوش آمدید</h1>
+    <p>سرور ماینکرفت حرفه‌ای با چندین گیم مود جذاب</p>
 
-<h2>شبکه دیل کرفت | DilCraft Network</h2>
-
-<p>
-به دنیای دیل کرفت خوش آمدید!
-<br>
-ماجراجویی خودت را شروع کن.
-</p>
-
-<div class="ip">
-🎮 dragon.9craft.ir:16575
-</div>
-
+    <button class="main-btn" onclick="showPage('dashboard')">
+        ورود به داشبورد
+    </button>
 </section>
+
+<section class="section">
+    <h2>🎮 گیم مودها</h2>
+
+    <div class="grid">
+
+        <div class="card mode" onclick="openGame('SkyMine')">
+            <div class="mode-icon">☁️</div>
+            <h3>SkyMine</h3>
+            <p>ماجراجویی و پیشرفت در آسمان</p>
+            <button class="main-btn">ورود</button>
+        </div>
+
+        <div class="card mode" onclick="openGame('Survival')">
+            <div class="mode-icon">🌲</div>
+            <h3>Survival</h3>
+            <p>بقا، ساخت‌وساز و ماجراجویی</p>
+            <button class="main-btn">ورود</button>
+        </div>
+
+        <div class="card mode" onclick="openGame('BedWars')">
+            <div class="mode-icon">⚔️</div>
+            <h3>BedWars</h3>
+            <p>نبرد تیمی و دفاع از تخت</p>
+            <button class="main-btn">ورود</button>
+        </div>
+
+    </div>
+</section>
+
+</main>
 
 
 <!-- DASHBOARD -->
+<main id="dashboard" class="container hidden">
 
-<section id="status">
+<section class="hero">
+    <h1>📊 داشبورد</h1>
+    <p>اطلاعات سرور و حساب کاربری</p>
+</section>
 
-<div class="title">
-<h2>Dashboard | داشبورد</h2>
-<p>اطلاعات سرور</p>
-</div>
+<section class="section">
 
-<div class="status-container">
+<div class="grid">
 
-<div class="status-box">
+    <div class="card">
+        <h3>🟢 وضعیت سرور</h3>
+        <div class="status">
+            <span class="dot"></span>
+            آنلاین
+        </div>
+        <p>وضعیت فعلی سرور</p>
+    </div>
 
-<div class="status-icon">🟢</div>
+    <div class="card">
+        <h3>👥 بازیکنان آنلاین</h3>
+        <div class="dil">0</div>
+        <p>بازیکن آنلاین</p>
+    </div>
 
-<div class="status-title">
-Server Status | وضعیت سرور
-</div>
-
-<div id="serverStatus" class="status-value">
-Checking...
-</div>
-
-</div>
-
-
-<div class="status-box">
-
-<div class="status-icon">👥</div>
-
-<div class="status-title">
-Players Online | پلیرهای آنلاین
-</div>
-
-<div id="playersOnline" class="status-value">
---
-</div>
-
-</div>
+    <div class="card wallet">
+        <h3>🪙 کیف پول Dil</h3>
+        <div class="dil" id="walletAmount">500 Dil</div>
+        <p>موجودی حساب شما</p>
+    </div>
 
 </div>
 
 </section>
 
-
-<!-- GAME MODES -->
-
-<section id="modes">
-
-<div class="title">
-
-<h2>Game Modes | گیم مودها</h2>
-
-<p>گیم مودهای دیل کرفت</p>
-
-</div>
+</main>
 
 
-<div class="modes">
+<!-- SHOP -->
+<main id="shop" class="container hidden">
 
-<div class="card sky">
+<section class="hero">
+    <h1>🛒 فروشگاه DilCraft</h1>
+    <p>گیم مود موردنظر خود را انتخاب کنید</p>
+</section>
 
-<div class="icon">☁️⛏️</div>
+<section class="section">
 
-<h3>SkyMine</h3>
+<div class="grid">
 
-<h4>اسکای ماین</h4>
+    <div class="card" onclick="openGame('SkyMine')">
+        <div class="mode-icon">☁️</div>
+        <h3>SkyMine</h3>
+        <p>رنک و کریت مخصوص SkyMine</p>
+        <button class="main-btn">مشاهده فروشگاه</button>
+    </div>
 
-<p>جزیره خودت را بساز و منابع جمع کن.</p>
+    <div class="card" onclick="openGame('Survival')">
+        <div class="mode-icon">🌲</div>
+        <h3>Survival</h3>
+        <p>رنک و آیتم‌های Survival</p>
+        <button class="main-btn">مشاهده فروشگاه</button>
+    </div>
 
-</div>
-
-
-<div class="card survival">
-
-<div class="icon">🌲🏠</div>
-
-<h3>Survival</h3>
-
-<h4>سروایول</h4>
-
-<p>در دنیای بقا ماجراجویی کن.</p>
-
-</div>
-
-
-<div class="card smp">
-
-<div class="icon">⚔️🔥</div>
-
-<h3>SMP</h3>
-
-<h4>اس ام پی</h4>
-
-<p>با دوستانت بازی و ماجراجویی کن.</p>
-
-</div>
+    <div class="card" onclick="openGame('BedWars')">
+        <div class="mode-icon">⚔️</div>
+        <h3>BedWars</h3>
+        <p>رنک و آیتم‌های BedWars</p>
+        <button class="main-btn">مشاهده فروشگاه</button>
+    </div>
 
 </div>
 
 </section>
 
+</main>
 
-<!-- STORE -->
 
-<section class="store" id="store">
+<!-- GAMEMODE SHOP -->
+<main id="gameShop" class="container hidden">
 
-<div class="title">
-
-<h2>Store | فروشگاه</h2>
-
-<p>گیم مود مورد نظر را انتخاب کنید</p>
-
-</div>
-
-
-<div class="store-modes">
-
-
-<div class="store-mode" onclick="openSkyMine()">
-
-<div class="big-icon">☁️⛏️</div>
-
-<h3>SkyMine</h3>
-
-<p>فروشگاه اسکای ماین</p>
-
-</div>
-
-
-<div class="store-mode">
-
-<div class="big-icon">🌲🏠</div>
-
-<h3>Survival</h3>
-
-<p>به‌زودی</p>
-
-</div>
-
-
-<div class="store-mode">
-
-<div class="big-icon">⚔️🔥</div>
-
-<h3>SMP</h3>
-
-<p>به‌زودی</p>
-
-</div>
-
-</div>
-
-
-<!-- DIL SHOP -->
-
-<div style="margin-top:80px;">
-
-<div class="title">
-
-<h2>🪙 Dil Shop | فروشگاه دیل</h2>
-
-<p>خرید Dil برای استفاده در فروشگاه گیم‌مودها</p>
-
-</div>
-
-
-<div class="products">
-
-
-<div class="product">
-
-<div class="product-icon">🪙</div>
-
-<h3>100 Dil</h3>
-
-<p>صد دیل</p>
-
-<div class="price">90,000 تومان</div>
-
-<button class="buy">خرید</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🪙</div>
-
-<h3>200 Dil</h3>
-
-<p>دویست دیل</p>
-
-<div class="price">180,000 تومان</div>
-
-<button class="buy">خرید</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🪙</div>
-
-<h3>300 Dil</h3>
-
-<p>سیصد دیل</p>
-
-<div class="price">280,000 تومان</div>
-
-<button class="buy">خرید</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🪙</div>
-
-<h3>500 Dil</h3>
-
-<p>پانصد دیل</p>
-
-<div class="price">470,000 تومان</div>
-
-<button class="buy">خرید</button>
-
-</div>
-
-
-<div class="product">
-
-<div class="product-icon">🪙</div>
-
-<h3>1000 Dil</h3>
-
-<p>هزار دیل</p>
-
-<div class="price">950,000 تومان</div>
-
-<button class="buy">خرید</button>
-
-</div>
-
-
-</div>
-
-</div>
-
+<section class="hero">
+    <h1 id="gameTitle">SkyMine</h1>
+    <p>فروشگاه اختصاصی این گیم مود</p>
 </section>
 
+<section class="section">
 
-<!-- SKY MINE SHOP -->
+<h2>🏆 رنک‌ها</h2>
 
-<section class="shop-page" id="skymineShop">
+<div class="grid">
 
-<div class="shop-header">
-
-<h2>SkyMine Store</h2>
-
-<p>فروشگاه اختصاصی SkyMine</p>
-
-</div>
-
-
-<h3 class="shop-section-title">
-👑 Ranks | رنک‌ها
-</h3>
-
-
-<div class="products">
-
-
-<div class="product">
-<div class="product-icon">⚡</div>
-<h3>Vortex</h3>
-<p>ورتکس</p>
+<div class="card">
+<h3>Nova</h3>
+<p>رنک مخصوص SkyMine</p>
 <div class="price">200 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Nova',200)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">🌌</div>
-<h3>Astra</h3>
-<p>آسترا</p>
+<div class="card">
+<h3>Orbit</h3>
+<p>رنک مخصوص SkyMine</p>
 <div class="price">400 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Orbit',400)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">🔥</div>
-<h3>Inferno</h3>
-<p>اینفرنو</p>
+<div class="card">
+<h3>Pulse</h3>
+<p>رنک مخصوص SkyMine</p>
 <div class="price">600 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Pulse',600)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">👑</div>
-<h3>Eclipse</h3>
-<p>اکلیپس</p>
+<div class="card">
+<h3>Zenith</h3>
+<p>رنک مخصوص SkyMine</p>
 <div class="price">800 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Zenith',800)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">💎</div>
+<div class="card">
 <h3>Sponsor</h3>
-<p>اسپانسر</p>
+<p>رنک ویژه حمایت‌کننده</p>
 <div class="price">1000 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Sponsor',1000)">خرید</button>
 </div>
 
-
 </div>
 
-
-<h3 class="shop-section-title">
-🎁 Crates | کریت‌ها
-</h3>
+</section>
 
 
-<div class="products">
+<section class="section">
 
+<h2>🎁 Crate</h2>
 
-<div class="product">
-<div class="product-icon">⚡</div>
-<h3>Tempest</h3>
-<p>تمپست</p>
+<div class="grid">
+
+<div class="card">
+<h3>Crystal</h3>
 <div class="price">100 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Crystal Crate',100)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">🌌</div>
-<h3>Starlight</h3>
-<p>استارلایت</p>
+<div class="card">
+<h3>Inferno</h3>
 <div class="price">200 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Inferno Crate',200)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">🔥</div>
-<h3>Ember</h3>
-<p>امبر</p>
+<div class="card">
+<h3>Galaxy</h3>
 <div class="price">400 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Galaxy Crate',400)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">🌙</div>
-<h3>Moonfall</h3>
-<p>مون‌فال</p>
+<div class="card">
+<h3>Shadow</h3>
 <div class="price">500 Dil</div>
-<button class="buy">خرید</button>
+<button class="main-btn" onclick="buyItem('Shadow Crate',500)">خرید</button>
 </div>
 
-
-<div class="product">
-<div class="product-icon">💎</div>
-<h3>Fortune</h3>
-<p>فورچون</p>
+<div class="card">
+<h3>Legend</h3>
 <div class="price">700 Dil</div>
-<button class="buy">خرید</button>
-</div>
-
-
-</div>
-
-
-<div class="back" onclick="closeSkyMine()">
-← بازگشت به فروشگاه
-</div>
-
-</section>
-
-
-<!-- SERVER -->
-
-<section class="server">
-
-<div class="title">
-<h2>Server Information | اطلاعات سرور</h2>
-</div>
-
-<div class="server-box">
-
-<h3>🎮 DilCraft Network</h3>
-
-<br>
-
-<p>Server IP</p>
-
-<br>
-
-<div class="server-ip">
-dragon.9craft.ir:16575
+<button class="main-btn" onclick="buyItem('Legend Crate',700)">خرید</button>
 </div>
 
 </div>
 
 </section>
+
+
+<section class="section">
+
+<h2>🪙 خرید Dil</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>100 Dil</h3>
+<div class="price">90,000 تومان</div>
+<button class="main-btn">خرید Dil</button>
+</div>
+
+<div class="card">
+<h3>200 Dil</h3>
+<div class="price">180,000 تومان</div>
+<button class="main-btn">خرید Dil</button>
+</div>
+
+<div class="card">
+<h3>300 Dil</h3>
+<div class="price">280,000 تومان</div>
+<button class="main-btn">خرید Dil</button>
+</div>
+
+<div class="card">
+<h3>500 Dil</h3>
+<div class="price">470,000 تومان</div>
+<button class="main-btn">خرید Dil</button>
+</div>
+
+<div class="card">
+<h3>1000 Dil</h3>
+<div class="price">950,000 تومان</div>
+<button class="main-btn">خرید Dil</button>
+</div>
+
+</div>
+
+</section>
+
+<button class="main-btn" onclick="showPage('shop')">
+    ← برگشت به فروشگاه
+</button>
+
+</main>
 
 
 <footer>
-
-© 2026 <b>DilCraft Network</b>
-
-<br><br>
-
-تمامی حقوق محفوظ است | All Rights Reserved
-
+    © 2026 DilCraft — تمامی حقوق محفوظ است
 </footer>
 
 
 <script>
 
-function openSkyMine(){
+let wallet = 500;
 
-    document.getElementById("store").style.display="none";
-
-    document.getElementById("skymineShop")
-    .classList.add("active");
-
-    document.getElementById("skymineShop")
-    .scrollIntoView({behavior:"smooth"});
+function hideAll(){
+    document.getElementById("home").classList.add("hidden");
+    document.getElementById("dashboard").classList.add("hidden");
+    document.getElementById("shop").classList.add("hidden");
+    document.getElementById("gameShop").classList.add("hidden");
 }
 
+function showPage(page){
 
-function closeSkyMine(){
+    hideAll();
 
-    document.getElementById("skymineShop")
-    .classList.remove("active");
+    document.getElementById(page).classList.remove("hidden");
 
-    document.getElementById("store")
-    .style.display="block";
-
-    document.getElementById("store")
-    .scrollIntoView({behavior:"smooth"});
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
 }
 
+function openGame(game){
 
-/* SERVER STATUS */
+    document.getElementById("gameTitle").innerText =
+        "🛒 فروشگاه " + game;
 
-async function updateServer(){
+    hideAll();
 
-    const status =
-    document.getElementById("serverStatus");
+    document.getElementById("gameShop").classList.remove("hidden");
 
-    const players =
-    document.getElementById("playersOnline");
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
 
-    try{
+function buyItem(name,price){
 
-        const response =
-        await fetch(
-        "https://api.mcsrvstat.us/3/dragon.9craft.ir:16575"
+    if(wallet >= price){
+
+        wallet -= price;
+
+        document.getElementById("walletAmount").innerText =
+            wallet + " Dil";
+
+        alert(
+            "✅ خرید موفق!\n\n" +
+            name +
+            "\n\nمبلغ: " +
+            price +
+            " Dil\n\n" +
+            "موجودی جدید: " +
+            wallet +
+            " Dil"
         );
 
-        const data =
-        await response.json();
+    }else{
 
-        if(data.online){
+        alert(
+            "❌ موجودی Dil کافی نیست.\n\n" +
+            "موجودی شما: " +
+            wallet +
+            " Dil"
+        );
 
-            status.textContent="Online | روشن";
-
-            status.className=
-            "status-value online";
-
-            players.textContent =
-            data.players ?
-            data.players.online : "0";
-
-        }else{
-
-            status.textContent="Offline | خاموش";
-
-            status.className=
-            "status-value offline";
-
-            players.textContent="0";
-        }
-
-    }catch(error){
-
-        status.textContent="Unknown | نامشخص";
-
-        status.className=
-        "status-value offline";
-
-        players.textContent="--";
     }
 }
-
-updateServer();
-
-setInterval(updateServer,300000);
 
 </script>
 
