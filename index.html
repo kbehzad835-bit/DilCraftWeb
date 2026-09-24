@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>DilCraft Network</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      color: white;
+      background:
+        linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.8)),
+        radial-gradient(circle at top, #4b0082, #090014 55%, #000);
+      overflow-x: hidden;
+    }
+
+    /* NAVBAR */
+    nav {
+      width: 100%;
+      padding: 20px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,0.35);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .logo {
+      font-size: 28px;
+      font-weight: bold;
+      color: #b86cff;
+      text-shadow: 0 0 15px #8a2be2;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 25px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: #b86cff;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 75vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 40px 20px;
+    }
+
+    .hero h1 {
+      font-size: 65px;
+      margin-bottom: 15px;
+      text-shadow: 0 0 25px #8a2be2;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #ddd;
+      margin-bottom: 30px;
+    }
+
+    .ip {
+      background: rgba(0,0,0,0.5);
+      border: 1px solid #8a2be2;
+      padding: 15px 25px;
+      border-radius: 12px;
+      font-size: 18px;
+      margin-bottom: 25px;
+      box-shadow: 0 0 20px rgba(138,43,226,0.5);
+    }
+
+    .button {
+      display: inline-block;
+      padding: 14px 30px;
+      border-radius: 10px;
+      background: linear-gradient(45deg, #6a0dad, #a855f7);
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      box-shadow: 0 0 20px rgba(168,85,247,0.5);
+      transition: 0.3s;
+    }
+
+    .button:hover {
+      transform: scale(1.05);
+    }
+
+    /* GAME MODES */
+    .section {
+      padding: 70px 7%;
+      text-align: center;
+    }
+
+    .section h2 {
+      font-size: 38px;
+      margin-bottom: 40px;
+    }
+
+    .modes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+    }
+
+    .mode {
+      padding: 35px 20px;
+      border-radius: 18px;
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(10px);
+      transition: 0.3s;
+    }
+
+    .mode:hover {
+      transform: translateY(-8px);
+      border-color: #a855f7;
+      box-shadow: 0 0 25px rgba(168,85,247,0.3);
+    }
+
+    .mode h3 {
+      font-size: 25px;
+      margin-bottom: 12px;
+    }
+
+    .mode p {
+      color: #bbb;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 30px;
+      color: #999;
+      border-top: 1px solid rgba(255,255,255,0.1);
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 45px;
+      }
+
+      nav {
+        padding: 18px;
+      }
+
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <div class="logo">DILCRAFT</div>
+
+    <div>
+      <a href="#home">Home</a>
+      <a href="#modes">Game Modes</a>
+      <a href="#server">Server</a>
+    </div>
+  </nav>
+
+  <section class="hero" id="home">
+
+    <h1>DILCRAFT</h1>
+
+    <p>Welcome to the DilCraft Network</p>
+
+    <div class="ip">
+      🎮 dragon.9craft.ir:16575
+    </div>
+
+    <a class="button"
+       href="minecraft://?addExternalServer=DilCraft|dragon.9craft.ir:16575">
+      PLAY NOW
+    </a>
+
+  </section>
+
+  <section class="section" id="modes">
+
+    <h2>Game Modes</h2>
+
+    <div class="modes">
+
+      <div class="mode">
+        <h3>☁️ SkyMine</h3>
+        <p>Build, survive and explore your own sky island.</p>
+      </div>
+
+      <div class="mode">
+        <h3>🌲 Survival</h3>
+        <p>Survive, build and create your own adventure.</p>
+      </div>
+
+      <div class="mode">
+        <h3>⚔️ SMP</h3>
+        <p>Play with other players and create your story.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <section class="section" id="server">
+
+    <h2>Server Information</h2>
+
+    <div class="ip">
+      Server IP: <b>dragon.9craft.ir:16575</b>
+    </div>
+
+    <p style="color:#aaa;">
+      Join DilCraft and start your adventure!
+    </p>
+
+  </section>
+
+  <footer>
+    © 2026 DilCraft Network — All Rights Reserved
+  </footer>
+
+</body>
+</html>
